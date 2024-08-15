@@ -20,5 +20,5 @@ class Constants{
     end: Alignment.topLeft,
     colors: [Color(0xff51087e), Color(0xff6C0BA9)],
     stops: [0.0, 1.0]
-  )
+  );
 }
