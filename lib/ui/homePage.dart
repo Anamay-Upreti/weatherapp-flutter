@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   final Constants _constants = Constants();
 
   // Access API key from the .env file
-  static String API_KEY = dotenv.env['WEATHER_API_KEY']!;
+  static String API_KEY = dotenv.env['apiKey']!;
  
   String location = 'New Delhi';
   String weatherIcon = 'heavy cloudy.png';
@@ -27,9 +27,19 @@ class _HomePageState extends State<HomePage> {
   List hourlyWeatherForecast = [];
   List dailyWeatherForecast = [];
   String currentWeatherStatus = '';
-
+  //api call
+  String searchWeatherAPI = "http://api.weatherapi.com/v1/current.json?key=$API_KEY&days=7&q=";
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
+      body: Container(
+        width: size.width,
+        height: size.height,
+        padding: const EdgeInsets.only(top: 70, left: 10, right: 10),
+      ),
+    );
   }
 }
